@@ -8,14 +8,17 @@
 		<string>fb-messenger-share-api</string>
 	</array>
 	<key>CFBundleURLTypes</key>
-	<array>
-	<dict>
-	<key>CFBundleURLSchemes</key>
-	<array>
-		<string>fb1891969017818540</string>
-	</array>
-	</dict>
-	</array>
+		<array>
+			<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+				<array>
+					<string>fb1891969017818540</string>
+					<string>com.googleusercontent.apps.440277807113-0jl0sielr0amettin56hgg327pejgmfu</string>
+				</array>
+			</dict>
+		</array>
 	<key>FacebookAppID</key>
 	<string>1891969017818540</string>
 	<key>FacebookClientToken</key>
