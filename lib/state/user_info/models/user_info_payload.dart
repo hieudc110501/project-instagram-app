@@ -5,6 +5,7 @@ import 'package:instagram_clone_course/state/posts/typedefs/user_id.dart';
 
 @immutable
 class UserInfoPayload extends MapView<String, String> {
+  //convert map because add() method of firebase require a map 
   UserInfoPayload({
     required UserId userId,
     required String? displayName,

@@ -7,6 +7,8 @@ import 'package:instagram_clone_course/state/posts/typedefs/user_id.dart';
 
 class Authenticator {
   const Authenticator();
+
+  //get current user's information from Firebase
   User? get currentUser => FirebaseAuth.instance.currentUser;
   UserId? get userId => currentUser?.uid;
   bool get isAlreadyLoggedIn => userId != null;
