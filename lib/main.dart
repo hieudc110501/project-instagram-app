@@ -5,6 +5,7 @@ import 'package:instagram_clone_course/state/auth/providers/auth_state_provider.
 import 'package:instagram_clone_course/state/auth/providers/is_logged_in_provider.dart';
 import 'package:instagram_clone_course/state/providers/is_loading_provider.dart';
 import 'package:instagram_clone_course/views/components/loading/loading_screen.dart';
+import 'package:instagram_clone_course/views/login/login_view.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -81,30 +82,4 @@ class MainView extends StatelessWidget {
     );
   }
 }
-
-class LoginView extends ConsumerWidget {
-  const LoginView({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login View'),
-      ),
-      body: Column(
-        children: [
-          TextButton(
-            onPressed: ref.read(authStateProvider.notifier).loginWithGoogle,
-            child: const Text('Google'),
-          ),
-          TextButton(
-            onPressed: ref.read(authStateProvider.notifier).loginWithFacebook,
-            child: const Text('Facebook'),
-          ),
-        ],
-      ),
-    );
-  }
-}
+  
