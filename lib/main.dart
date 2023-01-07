@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:instagram_clone_course/state/auth/backend/authenticator.dart';
 import 'package:instagram_clone_course/state/auth/providers/auth_state_provider.dart';
 import 'package:instagram_clone_course/state/auth/providers/is_logged_in_provider.dart';
 import 'firebase_options.dart';
@@ -69,13 +68,13 @@ class MainView extends StatelessWidget {
   }
 }
 
-class LoginView extends StatelessWidget {
+class LoginView extends ConsumerWidget {
   const LoginView({
     Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login View'),
@@ -83,17 +82,11 @@ class LoginView extends StatelessWidget {
       body: Column(
         children: [
           TextButton(
-            onPressed: () async {
-              final res = await Authenticator().loginWithGoogle();
-              print(res);
-            },
+            onPressed: ref.read(authStateProvider.notifier).loginWithGoogle,
             child: const Text('Google'),
           ),
           TextButton(
-            onPressed: () async {
-              final res = await Authenticator().loginWithFacebook();
-              print(res);
-            },
+            onPressed: ref.read(authStateProvider.notifier).loginWithFacebook,
             child: const Text('Facebook'),
           ),
         ],
