@@ -2,13 +2,6 @@ import 'package:flutter/foundation.dart' show immutable;
 
 @immutable
 class Strings {
-  static const allowLikesTitle = 'Allow likes';
-  static const allowLikeDescription = 'By allowing likes, users will be able to press the like button on your post.';
-  static const allowLikesStorageKey = 'allow_likes';
-  static const allowCommentsTitle = 'Allow comments';
-  static const allowCommentsDescription = 'By allowing comments, users will be able to press the comment button on your post.';
-  static const allow = 'allow_comments';
-
   static const comment = 'comment';
   static const loading = 'Loading...';
   static const person = 'person';
