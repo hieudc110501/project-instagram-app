@@ -18,7 +18,7 @@ class EmptyContentsWithTextAnimationView extends StatelessWidget {
             padding: const EdgeInsets.all(32),
             child: Text(
               text,
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(color: Colors.white54),
+              style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white54),
             ),
           ),
           const EmptyContentsAnimationView(),
