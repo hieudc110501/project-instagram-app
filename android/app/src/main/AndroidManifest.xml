@@ -4,8 +4,10 @@
     <queries>
         <provider android:authorities="com.facebook.katana.provider.PlatformProvider" />
     </queries>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
    <application
+        android:requestLegacyExternalStorage="true"
         android:label="instagram_clone_course"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">

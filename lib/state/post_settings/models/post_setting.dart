@@ -3,23 +3,24 @@ import 'package:instagram_clone_course/state/post_settings/constants/constants.d
 enum PostSetting {
   allowLikes(
     title: Constants.allowLikesTitle,
-    desciption: Constants.allowLikeDescription,
+    description: Constants.allowLikesDescription,
     storageKey: Constants.allowLikesStorageKey,
   ),
-
   allowComments(
     title: Constants.allowCommentsTitle,
-    desciption: Constants.allowCommentsDescription,
+    description: Constants.allowCommentsDescription,
     storageKey: Constants.allowCommentsStorageKey,
   );
 
   final String title;
-  final String desciption;
+  final String description;
+
+  // firebase storage key
   final String storageKey;
 
   const PostSetting({
     required this.title,
-    required this.desciption,
+    required this.description,
     required this.storageKey,
   });
 }

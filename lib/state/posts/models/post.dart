@@ -3,7 +3,6 @@ import 'package:instagram_clone_course/state/image_upload/models/file_type.dart'
 import 'package:instagram_clone_course/state/post_settings/models/post_setting.dart';
 import 'package:instagram_clone_course/state/posts/models/post_key.dart';
 import 'package:flutter/foundation.dart' show immutable;
-
 @immutable
 class Post {
   final String postId;
@@ -42,6 +41,6 @@ class Post {
             ): entry.value,
         };
 
-  bool get allowLikes => postSettings[PostSetting.allowLikes] ?? false;
-  bool get allowComments => postSettings[PostSetting.allowComments] ?? false;
+  bool get allowsLikes => postSettings[PostSetting.allowLikes] ?? false;
+  bool get allowsComments => postSettings[PostSetting.allowComments] ?? false;
 }
