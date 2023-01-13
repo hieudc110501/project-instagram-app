@@ -34,7 +34,6 @@ class _CreateNewPostViewState extends ConsumerState<CreateNewPostView> {
       fileType: widget.fileType,
     );
     final postSettings = ref.watch(postSettingProvider);
-    print(postSettings);
     final postController = useTextEditingController();
     final isPostButtonEnable = useState(false);
     useEffect(() {
