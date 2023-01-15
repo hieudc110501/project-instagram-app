@@ -9,6 +9,7 @@ import 'package:instagram_clone_course/views/components/dialogs/alert_dialog_mod
 import 'package:instagram_clone_course/views/components/dialogs/logout_dialog.dart';
 import 'package:instagram_clone_course/views/constants/strings.dart';
 import 'package:instagram_clone_course/views/create_new_post/create_new_post_view.dart';
+import 'package:instagram_clone_course/views/tabs/home/home_view.dart';
 import 'package:instagram_clone_course/views/tabs/search/search_view.dart';
 import 'package:instagram_clone_course/views/tabs/users_posts/user_posts_view.dart';
 
@@ -116,7 +117,7 @@ class _MainViewState extends ConsumerState<MainView> {
           children: [
             UserPostsView(),
             SearchView(),
-            UserPostsView(),
+            HomeView(),
           ],
         ),
       ),
