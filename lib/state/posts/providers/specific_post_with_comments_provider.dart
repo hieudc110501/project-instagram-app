@@ -38,7 +38,10 @@ final specificPostWithCommentsProvider = StreamProvider.family
     //watch changes to the post
     final postSub = FirebaseFirestore.instance
         .collection(FirebaseCollectionName.posts)
-        .where(FieldPath.documentId, isEqualTo: request.postId)
+        .where(
+          FieldPath.documentId,
+          isEqualTo: request.postId,
+        )
         .limit(1)
         .snapshots()
         .listen((snapshot) {
@@ -61,9 +64,17 @@ final specificPostWithCommentsProvider = StreamProvider.family
 
     //watch changes to the commment
     final commentsQuery = FirebaseFirestore.instance
-        .collection(FirebaseCollectionName.comments)
-        .where(FirebaseFieldName.postId, isEqualTo: request.postId)
-        .orderBy(FirebaseFieldName.createdAt, descending: true);
+        .collection(
+          FirebaseCollectionName.comments,
+        )
+        .where(
+          FirebaseFieldName.postId,
+          isEqualTo: request.postId,
+        )
+        .orderBy(
+          FirebaseFieldName.createdAt,
+          descending: true,
+        );
 
     // get amount of comments
     final limitedCommentQuery = request.limit != null
@@ -74,7 +85,7 @@ final specificPostWithCommentsProvider = StreamProvider.family
       (snapshot) {
         comments = snapshot.docs
             .where(
-              (doc) => doc.metadata.hasPendingWrites,
+              (doc) => !doc.metadata.hasPendingWrites,
             )
             .map(
               (doc) => Comment(

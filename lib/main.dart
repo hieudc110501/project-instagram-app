@@ -39,8 +39,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: Consumer(
-        builder: (context, ref, child) {
-          
+        builder: (context, ref, child) {   
           // use listen() instead of watch() because must not rebuild context
           ref.listen<bool>(isLoadingProvider, (_, isLoading) { 
             if (isLoading) {
