@@ -21,6 +21,15 @@ class MainView extends ConsumerStatefulWidget {
 }
 
 class _MainViewState extends ConsumerState<MainView> {
+  int _currentIndex = 0;
+  final tabs = const [
+    HomeView(),
+    SearchView(),
+    HomeView(),
+    HomeView(),
+    UserPostsView(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -99,26 +108,57 @@ class _MainViewState extends ConsumerState<MainView> {
               ),
             ),
           ],
-          bottom: const TabBar(
-            tabs: [
-              Tab(
-                icon: Icon(Icons.person),
-              ),
-              Tab(
-                icon: Icon(Icons.search),
-              ),
-              Tab(
-                icon: Icon(Icons.home),
-              ),
-            ],
-          ),
         ),
-        body: const TabBarView(
-          children: [
-            UserPostsView(),
-            SearchView(),
-            HomeView(),
+        body: tabs[_currentIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.black,
+          showUnselectedLabels: false,
+          showSelectedLabels: false,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(
+                _currentIndex == 0 ? Icons.home : Icons.home_outlined,
+                color: Colors.white,
+              ),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                _currentIndex == 1 ? Icons.search : Icons.search_rounded,
+                color: Colors.white,
+                size: _currentIndex == 1 ? 26 : 24,
+              ),
+              label: 'Search',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                _currentIndex == 2 ? Icons.video_collection : Icons.video_collection_outlined,
+                color: Colors.white,
+              ),
+              label: 'Reels',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                _currentIndex == 3 ? Icons.favorite : Icons.favorite_border,
+                color: Colors.white,
+              ),
+              label: 'Favorite',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                _currentIndex == 4 ? Icons.person : Icons.person_outline,
+                color: Colors.white,
+              ),
+              label: 'Person',
+            )
           ],
+          currentIndex: _currentIndex,
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
         ),
       ),
     );

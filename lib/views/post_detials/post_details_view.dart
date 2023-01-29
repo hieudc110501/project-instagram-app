@@ -61,7 +61,7 @@ class _PostDetialsViewState extends ConsumerState<PostDetialsView> {
           Strings.postDetails,
         ),
         actions: [
-          //share button is always presnet
+          //share button is always present
           postWithComments.when(
             data: (postWithComments) {
               return IconButton(

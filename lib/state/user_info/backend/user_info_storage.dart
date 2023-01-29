@@ -27,7 +27,7 @@ class UserInfoStorage {
           .limit(1)
           .get();
       if (userInfo.docs.isNotEmpty) {
-        //we already have this user's info adn update current info
+        //we already have this user's info and update current info
         await userInfo.docs.first.reference.update({
           FirebaseFieldName.displayName: displayName,
           FirebaseFieldName.email: email ?? '',

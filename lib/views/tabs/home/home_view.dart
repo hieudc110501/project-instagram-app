@@ -5,6 +5,7 @@ import 'package:instagram_clone_course/views/components/animations/empty_content
 import 'package:instagram_clone_course/views/components/animations/error_animation_view.dart';
 import 'package:instagram_clone_course/views/components/animations/loading_animation_view.dart';
 import 'package:instagram_clone_course/views/components/post/posts_grid_view.dart';
+import 'package:instagram_clone_course/views/components/post/posts_list_view.dart';
 import 'package:instagram_clone_course/views/constants/strings.dart';
 
 class HomeView extends ConsumerWidget {
@@ -22,7 +23,7 @@ class HomeView extends ConsumerWidget {
               text: Strings.noPostsAvailable,
             );
           } else {
-            return PostsGridView(
+            return PostListView(
               posts: posts,
             );
           }
